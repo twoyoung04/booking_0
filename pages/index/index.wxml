@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="page-body">
+    <view class="selected-date">{{year}}年{{month}}月{{day}}日{{time}}</view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+      
+      <picker-view-column>
+        <view wx:for="{{months}}" wx:key="{{months}}" style="line-height: 50px; text-align: center;">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" wx:key="{{days}}" style="line-height: 50px; text-align: center;">{{item}}日</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{times}}" wx:key="{{times}}" style="line-height: 50px; text-align: center;">{{item}}</view>
+      </picker-view-column>
+      
+    </picker-view>
+    <view class="submit">
+      <button bindtap="bindSubmitTap">
+        提交
+      </button>
+    </view>
+  </view>
+</view>

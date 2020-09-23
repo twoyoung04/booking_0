@@ -1,0 +1,19 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.selected-date {
+  text-align: center;
+}
